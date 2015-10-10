@@ -1,0 +1,21 @@
+{
+  "name": "estructura-front",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Beto23/estructura-front",
+  "authors": [
+    "Beto23 <josee-45@hotmail.com>"
+  ],
+  "description": "",
+  "main": "index.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

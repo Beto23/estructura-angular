@@ -1,0 +1,26 @@
+{
+  "name": "estructura-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server ./dep -o"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beto23/estructura-front.git"
+  },
+  "author": "jose alberto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beto23/estructura-front/issues"
+  },
+  "homepage": "https://github.com/Beto23/estructura-front#readme",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "debowerify": "^1.3.1",
+    "gulp-rimraf": "^0.2.0"
+  }
+}
