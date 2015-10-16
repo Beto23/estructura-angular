@@ -66,6 +66,13 @@ gulp.task('jade', function () {
   .pipe(livereload());
 });
 
+
+gulp.task('img', function () {
+  return gulp.src(['dev/img/*.jpg','dev/img/*.png'])
+  .pipe(gulp.dest('dep/img'))
+  
+});
+
 //observar los cambios y cada cambio borra dep
 gulp.task('watch', ['clean'], function(){
   livereload.listen()
@@ -76,5 +83,5 @@ gulp.task('watch', ['clean'], function(){
 
 //efectuar tarea - gulp
 gulp.task('default', ['watch'], function(){
-  gulp.start('styl', 'js', 'jade');
+  gulp.start('styl', 'js', 'jade', 'img');
 })
