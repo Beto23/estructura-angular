@@ -1,105 +1,24 @@
-//********Login *********************
-div.Popup-login
-	section.Login
-		div.Login-usuario
-			figure.Login-usuario-img
-			form.Login-usuario-form
-				h2 Login
-				div
-					label Usuario
-					input(type="text")
-				div
-					label Password
-					input(type="password")
-				div.Contenedor-submit
-					button(type="submit") Entrar
-//********Registro usuario y mecacino *********************
-div.Popup
-	section.Registro
-		article.Registro-usuario
-			figure.Registro-usuario-img
-			form.Registro-usuario-form
-				h2 Registro de Usuario
-				div
-					label Usuario
-					input(type="text")
-				div
-					label Nombre
-					input(type="text")
-				div
-					label Correo
-					input(type="text")
-				div
-					label Password
-					input(type="password")
-				div
-					button(type="submit") Registrar
-		article.Registro-mecanico
-			figure.Registro-mecanico-img
-			form.Registro-mecanico-form
-				h2 Registro de Mecanico
-				div
-					label Nombre
-					input(type="text")
-				div
-					label Usuario
-					input(type="text")
-				div
-					label Especialidad
-					select
-						option(value="op1") opcion1
-						option(value="op2") opcion2
-						option(value="op3") opcion3
-				div
-					label Correo
-					input(type="text")
-				div
-					label Direccion
-					input(type="text")
-				div
-					label Telefeno
-					input(type="text")
-				div
-					label Contraseña
-					input(type="password")
-				div
-					button(type="submit") Registrar
-//*********** Pagina principal *************
-div.Contenedor
-	header.Header
-		h2.Header-title MecanicoApp
-		div.Header-btn
-			button#btn-signup.Header-btn-registrarse Sign up
-			button#btn-login.Header-btn-login Login
-	section.section-swiper
-		//swiper
-		div.swiper-container.Banner
-			div.swiper-wrapper
-				div.swiper-slide
-					h2 Perfil de usuario
-					img(src="img/perfiluser.jpg")
-				div.swiper-slide
-					h2 Perfil de Mecanico
-					img(src="img/perfilmecanico.jpg")
-				div.swiper-slide
-					h2 Registra tus manteniminetos
-					img(src="img/registraMantt.jpg")
-				div.swiper-slide
-					h2 Historial de manteniminetos
-					img(src="img/historialMant.jpg")
-				div.swiper-slide
-					h2 Registra tus clientes
-					img(src="img/registrarCliente.jpg")
-		div.swiper-pagination
-	section.About
-		div.About-Info
-			h3 Direccion
-			p Adolfo Lopez Mateos #153 col Roma
-			img(src='')
-		div.About-Info
-			h3 Facebook
-			a(href='https://www.facebook.com/beto.cordobalugo',target="_blank").IconoFace
-				img(src='img/facebook.png')
-		div.About-Info
-			h3 Contacto
-			imng(src='')
+header.Header
+	h2.Header-title MecanicoApp
+	div.Header-btn
+		button(popup-add="<popup-sesion/>").Header-btn-registrarse Sign up
+		button(popup-add="<popup-registro/>").Header-btn-login Login
+section.section-imagenes
+	//swiper
+	ul(rn-carousel class="image" rn-carousel-auto-slide)
+		li(ng-repeat="img in imgs")
+			div(class="layer")
+				figure(style="background-image:url({{img[0]}})")
+					figcaption {{img[1]}}
+section.About
+	div.About-Info
+		h3 Direccion
+		p Adolfo Lopez Mateos #153 col Roma
+		img(src='')
+	div.About-Info
+		h3 Facebook
+		a(href='https://www.facebook.com/beto.cordobalugo',target="_blank").IconoFace
+			img(src='img/facebook.png')
+	div.About-Info
+		h3 Contacto
+		img(src='')

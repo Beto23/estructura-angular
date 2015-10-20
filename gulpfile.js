@@ -30,10 +30,22 @@ gulp.task('clean', function(){
 });
 
 //minifica el archivo js
+gulp.task('js-vendor', function() {
+  return browserify({
+    entries: './dev/vendor.js', //punto de entrada js
+    transform: debowerify //transformaciones
+  })
+  .bundle()
+  .pipe(source('vendor.js'))
+  .pipe(buffer())
+  .pipe(uglify())
+  .pipe(gulp.dest('./dep/js'))
+  .pipe(livereload())
+});
+
 gulp.task('js', function() {
   return browserify({
-    entries: './dev/index.js', //punto de entrada js
-    transform: debowerify //transformaciones
+    entries: './dev/index.js'//punto de entrada js
   })
   .bundle()
   .pipe(source('app.js'))
@@ -42,6 +54,7 @@ gulp.task('js', function() {
   .pipe(gulp.dest('./dep/js'))
   .pipe(livereload())
 });
+
 
 //compila codigo stylus y lo minifica
 gulp.task('styl', function() {
@@ -76,12 +89,12 @@ gulp.task('img', function () {
 //observar los cambios y cada cambio borra dep
 gulp.task('watch', ['clean'], function(){
   livereload.listen()
-  gulp.watch('./dev/**/*.styl', ['styl']);
-  gulp.watch('./dev/**/*.jade', ['jade']);
-  gulp.watch('./dev/**/*.js', ['js']);
+  gulp.watch('./dev/**/**/**/*.styl', ['styl']);
+  gulp.watch('./dev/**/**/*.jade', ['jade']);
+  gulp.watch('./dev/**/**/*.js', ['js']);
 })
 
 //efectuar tarea - gulp
 gulp.task('default', ['watch'], function(){
-  gulp.start('styl', 'js', 'jade', 'img');
+  gulp.start('styl', 'js', 'jade', 'img', 'js-vendor');
 })

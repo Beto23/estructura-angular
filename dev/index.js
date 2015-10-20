@@ -1,17 +1,5 @@
-window.$ = require('jquery');
-require('angular');
-require('angular-ui-router');
-require('./js-vendor/swiper');
-
 require('./app.module');
+require('./_helpers/_helpers');
 require('./login/_login');
-
-function hola(){
-	console.log("Hola Beto")
-}
-
-hola();
-var swiper= new Swiper('.swiper-container',{
-	loop:true,
-	autoplay:3000
-});
+require('./mecanico/_mecanico');
+require('./usuario/_usuario');

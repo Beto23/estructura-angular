@@ -1,5 +1,5 @@
 (function(){
 
-	angular.module('appTec.Login', []);
+	angular.module('app.Login', ['angular-carousel']);
 
 })();
