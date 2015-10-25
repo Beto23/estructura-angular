@@ -5,7 +5,7 @@ html(lang="es", ng-app="app")
 		link(rel="stylesheet", href="./css/app.css")
 		link(href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css')
 		title App Mecanico
-	body
-		div(class="Contenedor", ui-view)
+	body(ng-class="{'fondo_loggin':(seccionActual.name == 'login'),'fondo_Perfil':(seccionActual.name == 'perfil.historial')}")
+		div(class="Contenedor", ui-view, ng-class="{'Perfil':(seccionActual.name == 'perfil')}")
 		script(src="./js/vendor.js")
 		script(src="./js/app.js")

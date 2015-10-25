@@ -86,15 +86,21 @@ gulp.task('img', function () {
   
 });
 
+gulp.task('fonts', function () {
+  return gulp.src('dev/styl/fonts/*.*')
+  .pipe(gulp.dest('dep/css/fonts'))
+  
+});
+
 //observar los cambios y cada cambio borra dep
 gulp.task('watch', ['clean'], function(){
   livereload.listen()
-  gulp.watch('./dev/**/**/**/*.styl', ['styl']);
-  gulp.watch('./dev/**/**/*.jade', ['jade']);
-  gulp.watch('./dev/**/**/*.js', ['js']);
+  gulp.watch('./dev/**/*.styl', ['styl']);
+  gulp.watch('./dev/**/*.jade', ['jade']);
+  gulp.watch('./dev/**/*.js', ['js']);
 })
 
 //efectuar tarea - gulp
 gulp.task('default', ['watch'], function(){
-  gulp.start('styl', 'js', 'jade', 'img', 'js-vendor');
+  gulp.start('styl', 'js', 'jade', 'img', 'js-vendor','fonts');
 })

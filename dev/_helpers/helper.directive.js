@@ -11,6 +11,7 @@
 				link: function(scope, elem, attrs){
 					//remove directive
 					 elem.bind('click', function(e) {
+					 	console.log('Close');
 					 	if(e.target != this) return;
 						elem.remove();
 					 });

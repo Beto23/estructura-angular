@@ -18,8 +18,33 @@
 				templateUrl: './login/login.html',
 				controller: 'LoginController'
 			})
+		$stateProvider
+			.state('perfil', {
+				abstract:true,
+				url: '/perfilUser',
+				templateUrl: './usuario/perfil/perfil.html'
+			})
+		$stateProvider
+			.state('perfil.historial', {
+				url: '/historial',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./usuario/perfil/historial/historial.html"
+					}
+				}
+			})
 
 	}])
+	.run(['$rootScope','$state','$stateParams',
+		function ($rootScope,$state,$stateParams) {
+			$rootScope.$on('$stateChangeSuccess',
+			  function(event, toState, toParams, fromState, fromParams) {
+			    $state.current = toState;
+			    $rootScope.seccionActual = toState;
+			  }
+			)
+		}
+	]);
 
 
 })();

@@ -6,13 +6,7 @@
 	function popupRegistro(){
 		return{
 				restrict: 'E',
-				templateUrl: './login/popup/popup_registro.html',
-				link: function(){
-					$('.Popup').click(function(e){
-						if(e.target != this) return;
-						$(this).remove();
-					});
-				}
+				templateUrl: './login/popup/popup_registro.html'
 			}
 	}
 
