@@ -1,24 +1,25 @@
-header.Header
-	h2.Header-title MecanicoApp
-	div.Header-btn
-		button(popup-add="<popup-sesion/>").Header-btn-registrarse Sign up
-		button(popup-add="<popup-registro/>").Header-btn-login Login
-section.section-imagenes
-	//swiper
-	ul(rn-carousel class="image" rn-carousel-auto-slide)
-		li(ng-repeat="img in imgs")
-			div(class="layer")
-				figure(style="background-image:url({{img[0]}})")
-					figcaption {{img[1]}}
-section.About
-	div.About-Info
-		h3 Direccion
-		p Adolfo Lopez Mateos #153 col Roma
-		img(src='')
-	div.About-Info
-		h3 Facebook
-		a(href='https://www.facebook.com/beto.cordobalugo',target="_blank").IconoFace
-			img(src='img/facebook.png')
-	div.About-Info
-		h3 Contacto
-		img(src='')
+div.Contenedor-Login
+	header.Header
+		h2.Header-title MecanicoApp
+		div.Header-btn
+			button(popup-add="<popup-sesion/>").Header-btn-registrarse Sign up
+			button(popup-add="<popup-registro/>").Header-btn-login Login
+	section.section-imagenes
+		//swiper
+		ul(rn-carousel class="image" rn-carousel-auto-slide)
+			li(ng-repeat="img in imgs")
+				div(class="layer")
+					figure(style="background-image:url({{img[0]}})")
+						figcaption {{img[1]}}
+	section.About
+		div.About-Info
+			h3 Direccion
+			p Adolfo Lopez Mateos #153 col Roma
+			img(src='')
+		div.About-Info
+			h3 Facebook
+			a(href='https://www.facebook.com/beto.cordobalugo',target="_blank").IconoFace
+				img(src='img/facebook.png')
+		div.About-Info
+			h3 Contacto
+			img(src='')

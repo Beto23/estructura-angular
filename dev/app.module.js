@@ -33,6 +33,24 @@
 					}
 				}
 			})
+		$stateProvider
+			.state('perfil.mantenimiento', {
+				url: '/mantenimiento',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./usuario/perfil/mantenimiento/mantenimiento.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('perfil.misAutos', {
+				url: '/misAutos',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./usuario/perfil/autos/autos.html"
+					}
+				}
+			})
 
 	}])
 	.run(['$rootScope','$state','$stateParams',
