@@ -1,1 +1,51 @@
+.Header-Perfil
+	h2
+.Contenedor-Perfil
+	.Info
+		.About
+			.Iconos-Portada
+				p
+					i
+						transition:color .5s
+						cursor:pointer;
+					i:hover
+						color:#107BD6;
+		.Navegacion
+			&-Contenedor
+				& button:nth-child(4)
+					position:relative;
+					&:hover
+						border:0 !important;
+						font-weight: normal !important;
+						background:white;
+						.Navegacion-Contenedor-Desplegar
+							height:5.7em;
+							background:#404040;
+					li
+						padding:.3em;
+						color:white;
+					li:hover
+						background:rgba(255,255,255,0.50);
+						color:black;
+				&-Desplegar
+					//background:rgba(255,255,255,1);
+					list-style: none;
+					position:absolute;
+					left:0;
+					right:0;
+					top:100%;
+					width:100%;
+					height: 0;
+					margin:0;
+					padding:0;
+					overflow:hidden;
+					transition: height .1s linear;
+					& > li
+						button
+							display:block;
 @import './citas/citas';
+@import './historial/historial';
+@import './clientes/clientes';
+@import './add_mecanico/add_mecanico';
+@import './mantenimientos/mantenimientos';
+@import './autos/autos';

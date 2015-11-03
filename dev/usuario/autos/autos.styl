@@ -1,5 +1,11 @@
-.Contenedor-Cita
-	.Iconos
+@import './popup_autos/popup_autos';
+.Contenedor-Usuario-Auto
+	h2
+		text-align:center;
+	&-Iconos
+		width:30em;
+		margin:0 auto;
+		text-align:right;
 		i
 			padding-right:.5em;
 			font-size:1.3em;
@@ -29,5 +35,7 @@
 						background:#404040;
 						cursor:pointer;
 						transition:color .5s;
+					i:last-child
+						border-left:2px solid #fff;
 					i:hover
 						color:#107BD6;

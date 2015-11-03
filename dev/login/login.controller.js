@@ -3,9 +3,14 @@
 	//modulo al qe pertenece
 	angular.module('app.Login')
 	.controller('LoginController', LoginController);
-	LoginController.$inject = ['$scope', '$compile'];
+	LoginController.$inject = ['$scope', '$compile','LoginService'];
 
-	function LoginController($scope, $compile){
+	function LoginController($scope, $compile, LoginService){
+
+		LoginService.obtenerUsuarios().then(function(data){
+			console.log(data)
+		});
+
 		$scope.imgs = [
 						['img/perfiluser.jpg','Perfil Usuario'],
 						['img/perfilmecanico.jpg','Perfil Mecanico'],

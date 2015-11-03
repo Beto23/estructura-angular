@@ -1,0 +1,1 @@
+require('./popup_autos/popup_autos.directive');

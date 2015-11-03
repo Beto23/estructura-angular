@@ -1,0 +1,1 @@
+require('./popup_mecanico/popup_mecanico.directive');

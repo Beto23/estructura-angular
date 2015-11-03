@@ -1,15 +1,40 @@
 //@import ("./perfil/perfil")
+.Popup2
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:transparent;
+	z-index:1;
+	background:rgba(0,0,9,0.97);
+	display:flex;
+	justify-content:center;
+	align-items:center;
 .Header-Perfil
 	width: 100%;
-	height: 5em;
-	background: white;
+	height: 3em;
+	background:rgba(0, 0, 0, 0.75);
 	margin-bottom: 3em;
+	.Logo
+		height:3em;
+		width:12em;
+		display:inline-block;
+		margin-left:2em;
+		figure
+			background-image:url(../img/advance2.png);
+			background-size:cover;
+			background-repeat:no-repeat;
+			height:3em;
+			width:12em;
 	h2
+		color:#fff;
 		margin:0;
+		display:inline-block;
 .Contenedor-Perfil
-		margin:0 auto;
-		width:100%;
-		//background:red;
+	margin:0 auto;
+	width:100%;
+	//background:red;
 	.Info
 		width: 46.25em;
 		background: red;
@@ -31,13 +56,15 @@
 						text-align:right;
 						padding:0 0.5em 0 0.5em;
 						font-size:1.3em;
-			figure
-				background-image:url(../img/usuario.jpg);
+			.Img-cliente
+				//background-image:url(../img/usuario.jpg);
+				background-image:url(../img/typer.jpg);
 				background-size:cover;
-				height:6em;
-				width:6em;
+				height:8em;
+				width:12em;
 				border-radius:100%;
 				margin:1em auto;
+				border:4px solid white;
 				top:2em;
 			h4
 				margin:0;
@@ -74,10 +101,6 @@
 		tr
 			td p
 				text-align:center;
-	.Iconos
-		margin:0 auto 0.3em auto;
-		width:30em;
-		text-align:right;
 @import './historial/historial';
 //@import './mantenimiento/mantenimiento';
 @import './autos/autos';

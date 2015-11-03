@@ -6,7 +6,8 @@
 	function popupInicioSesion(){
 		return{
 				restrict: 'E',
-				templateUrl: './login/popup/popup_inicioSesion.html'
+				templateUrl: './login/popup/popup_inicioSesion.html',
+				controller: 'LoginController'
 			}
 	}
 

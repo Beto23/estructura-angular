@@ -1,4 +1,6 @@
 header.Header-Perfil
+	div.Logo
+		figure
 	h2 Perfil usuario
 	//-i.icon-whatsapp
 section.Contenedor-Perfil
@@ -8,14 +10,17 @@ section.Contenedor-Perfil
 				p
 					i.icon-pencil
 					i.icon-camera
-			figure
+			figure.Img-cliente
 			h4 Beto Lugo
 		nav.Navegacion
 			div.Navegacion-Contenedor
 				button Historial
-				button Agregar usuario
-				button Agregar mecanico
-				button Agregar Autos
 				button Citas
-				button Agregar mantenimiento
+				button Clientes
+				button
+					| Más
+					ul.Navegacion-Contenedor-Desplegar
+						li Mecanicos
+						li Mantenimientos
+						li Autos
 div.Views(ui-view="contentPerfil").contentPerfil

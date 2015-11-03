@@ -6,7 +6,8 @@
 		'app.Login',
 		'app.Administrador',
 		'app.Usuario',
-		'app.Helpers'
+		'app.Helpers',
+		'app.constants'
 	])
 	.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider){ 
 
@@ -56,6 +57,51 @@
 				views: {
 					"contentPerfil": {
 						templateUrl:"./administrador/citas/citas.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('administrador.historial', {
+				url: '/historial',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./administrador/historial/historial.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('administrador.clientes', {
+				url: '/clientes',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./administrador/clientes/clientes.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('administrador.mecanico', {
+				url: '/mecanico',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./administrador/add_mecanico/add_mecanico.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('administrador.mantenimientos', {
+				url: '/mantenimientos',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./administrador/mantenimientos/mantenimientos.html"
+					}
+				}
+			})
+		$stateProvider
+			.state('administrador.autos', {
+				url: '/autos',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./administrador/autos/autos.html"
 					}
 				}
 			})
