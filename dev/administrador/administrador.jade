@@ -1,7 +1,7 @@
 header.Header-Perfil
 	div.Logo
 		figure
-	h2 Perfil usuario
+	h2 {{saludo}}
 	//-i.icon-whatsapp
 section.Contenedor-Perfil
 	div.Info
@@ -14,13 +14,13 @@ section.Contenedor-Perfil
 			h4 Beto Lugo
 		nav.Navegacion
 			div.Navegacion-Contenedor
-				button Historial
-				button Citas
-				button Clientes
+				button(ui-sref='administrador.historial') Historial
+				button(ui-sref='administrador.citas') Citas
+				button(ui-sref='administrador.clientes') Clientes
 				button
 					| Más
 					ul.Navegacion-Contenedor-Desplegar
-						li Mecanicos
-						li Mantenimientos
-						li Autos
+						li(ui-sref='administrador.mecanico') Mecanicos
+						li(ui-sref='administrador.mantenimientos') Mantenimientos
+						li(ui-sref='administrador.autos') Autos
 div.Views(ui-view="contentPerfil").contentPerfil
