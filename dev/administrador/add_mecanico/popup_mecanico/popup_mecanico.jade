@@ -5,15 +5,12 @@ div.Popup2(popup-close)
 			h2 Agregar Mecanico
 			div.Form-Mecanico-Contenedor
 				label Nombre:
-				input(type="text")
+				input(type="text" ng-model="mecanico.nombre")
 			div.Form-Mecanico-Contenedor
 				label Paterno:
-				input(type="text")
+				input(type="text" ng-model="mecanico.nom_paterno")
 			div.Form-Mecanico-Contenedor
 				label Materno:
-				input(type="text")
+				input(type="text" ng-model="mecanico.nom_materno")
 			div.Form-Mecanico-Contenedor
-				label Edad:
-				input(type="text")
-			div.Form-Mecanico-Contenedor
-				button Agregar
+				button(ng-click="addMecanico()") Agregar

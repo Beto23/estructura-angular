@@ -6,7 +6,8 @@
 	function popupRegistro(){
 		return{
 				restrict: 'E',
-				templateUrl: './login/popup/popup_registro.html'
+				templateUrl: './login/popup/popup_registro.html',
+				controller:'PopupRegistrarCliente'
 			}
 	}
 

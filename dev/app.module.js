@@ -40,7 +40,17 @@
 				url: '/misAutos',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./usuario/autos/autos.html"
+						templateUrl:"./usuario/autos/autos.html",
+						controller:'AutoController'
+					}
+				}
+			})
+		$stateProvider
+			.state('perfil.consejos', {
+				url: '/consejos',
+				views: {
+					"contentPerfil": {
+						templateUrl:"./usuario/consejos/consejos.html"
 					}
 				}
 			})
@@ -56,7 +66,8 @@
 				url: '/citas',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/citas/citas.html"
+						templateUrl:"./administrador/citas/citas.html",
+						controller:'CitaController'
 					}
 				}
 			})
@@ -74,7 +85,8 @@
 				url: '/clientes',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/clientes/clientes.html"
+						templateUrl:"./administrador/clientes/clientes.html",
+						controller:'ClientesController'
 					}
 				}
 			})
@@ -83,7 +95,8 @@
 				url: '/mecanico',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/add_mecanico/add_mecanico.html"
+						templateUrl:"./administrador/add_mecanico/add_mecanico.html",
+						controller:'ControllerMecanico'
 					}
 				}
 			})
@@ -92,16 +105,18 @@
 				url: '/mantenimientos',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/mantenimientos/mantenimientos.html"
+						templateUrl:"./administrador/mantenimientos/mantenimientos.html",
+						controller:'MantenimientoController'
 					}
 				}
 			})
 		$stateProvider
-			.state('administrador.autos', {
-				url: '/autos',
+			.state('administrador.admin', {
+				url: '/admin',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/autos/autos.html"
+						templateUrl:"./administrador/admin/admin.html",
+						controller:'AdminController'
 					}
 				}
 			})

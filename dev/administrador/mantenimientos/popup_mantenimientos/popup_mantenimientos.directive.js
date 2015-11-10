@@ -6,7 +6,8 @@
 	function popupAgregarMantenimiento(){
 		return{
 				restrict: 'E',
-				templateUrl: './administrador/mantenimientos/popup_mantenimientos/popup_mantenimientos.html'
+				templateUrl: './administrador/mantenimientos/popup_mantenimientos/popup_mantenimientos.html',
+				controller: 'MantenimientoController'
 			}
 	}
 

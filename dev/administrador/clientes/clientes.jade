@@ -5,7 +5,7 @@ section.Contenedor-Clientes
 			i.icon-search
 			input(type="text")
 			i.icon-printer
-			i(popup-add="<popup-agregar-clientes/>").icon-plus
+			//i.icon-plus
 	table.Tabla-Clientes
 		tr
 			th
@@ -16,15 +16,15 @@ section.Contenedor-Clientes
 				p Paterno
 			th
 				p Materno
-		tr
+		tr(ng-repeat="cte in clientes")
 			td 
-				p 01
+				p {{cte.id_cliente}}
 			td 
-				p Jose Alberto
+				p {{cte.nombre}}
 			td
-				p Cordoba
+				p {{cte.nom_paterno}}
 			td.Td
 				div
-					p Lugo
+					p {{cte.nom_materno}}
 					i.icon-bin
-					i.icon-pencil
+					i(popup-add="<popup-agregar-clientes/>").icon-pencil

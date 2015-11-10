@@ -8,21 +8,48 @@
 	function LoginService($q,$http,URL){
 
 		//Metodo ObtenerUsuarios
-		function obtenerUsuarios(){
+		function login(usuario){
 			var deferred = $q.defer();
-			$http.get(URL.api + '/clientes')
-			.success(function(response){
-				deferred.resolve(response)
-			}).catch(function(err){
-				deferred.reject(err);
-			});
+
+			var usuario = angular.fromJson(usuario);
+
+			$http
+				.post(URL.API + 'login', usuario)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+
+		//Metodo Dar de alta
+		function agregarClientes(cliente){
+			var deferred = $q.defer();
+
+			var cliente = angular.fromJson(cliente);
+
+			$http
+				.post(URL.API + 'addCliente', cliente)
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
 
 			return deferred.promise;
 		}
 
 		//Return de los metodos
 		return {
-			obtenerUsuarios: obtenerUsuarios
+			login: login,
+			agregarClientes: agregarClientes
 		};
 	}
 

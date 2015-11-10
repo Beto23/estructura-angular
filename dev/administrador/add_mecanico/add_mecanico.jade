@@ -16,15 +16,15 @@ section.Contenedor-Mecanico
 				p Paterno
 			th
 				p Materno
-		tr
+		tr(ng-repeat="meca in mecanicos")
 			td 
-				p 01
+				p {{meca.id_mecanico}}
 			td 
-				p Victor
+				p {{meca.nombre}}
 			td
-				p Sandoval
+				p {{meca.nom_paterno}}
 			td.Td
 				div
-					p Lugo
+					p {{meca.nom_materno}}
 					i.icon-bin
 					i.icon-pencil

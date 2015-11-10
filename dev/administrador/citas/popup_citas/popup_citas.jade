@@ -5,13 +5,12 @@ div.Popup2(popup-close)
 			h2 Agendar Cita
 			div
 				label Administrador:
-				input(type="text" disabled)
+				select
+					option(value="op1" ng-repeat="admn in administradores") {{admn.nombre}}
 			div
 				label Cliente:
 				select
-					option(value="op1") Jose Alberto
-					option(value="op1") Alejandra Vazquez
-					option(value="op1") Carlos Lugo
+					option(value="op1" ng-repeat="cts in clientes") {{cts.nombre}} {{cts.nom_paterno}} {{cts.nombre}}
 
 			div
 				label Auto:
@@ -21,22 +20,11 @@ div.Popup2(popup-close)
 			div
 				label Descripción:
 				select
-					option(value="op1")
-					option(value="op1") Afinacion
-					option(value="op2") Frenos
-					option(value="op2") Cambio de llantas
-					option(value="op2") Cambio aceite
-					option(value="op2") Radiador
-					option(value="op2") Motor
-				label.Otro Otro:
-				input(type="text")
+					option(value="op1" ng-repeat="mante in mantenimientos") {{mante.descripcion}} ${{mante.costo}}
 			div
 				label Mecanico:
 				select
-					option(value="op1") Juan Rodrigo
-					option(value="op2") Victor Lopez
-					option(value="op2") El doc
-					option(value="op2") Pancho villa
+					option(value="op1" ng-repeat="meca in mecanicos") {{meca.nombre}}
 			div
 				label Fecha inicio:
 				input(type="date" value="Date")
@@ -47,4 +35,4 @@ div.Popup2(popup-close)
 				label Hora:
 				input(type="text")
 			div
-				button Agregar
+				button(ng-click="addCita()") Agregar

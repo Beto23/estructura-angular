@@ -6,9 +6,9 @@ div.Popup(popup-close)
 				h2 Login
 				div
 					label Usuario
-					input(type="text")
+					input(type="text" ng-model="usuario.usuario")
 				div
 					label Password
-					input(type="password")
+					input(type="password" ng-model="usuario.password")
 				div.Contenedor-submit
-					button(type="submit") Entrar
+					button(type="submit" ng-click="login()") Entrar

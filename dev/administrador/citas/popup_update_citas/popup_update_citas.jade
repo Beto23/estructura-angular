@@ -1,0 +1,38 @@
+div.Popup2(popup-close)
+	section.Contenedor-Admin
+		figure
+		form.Form-Admin
+			h2 Actualizar Cita
+			div
+				label Administrador:
+				select
+					option(value="op1" ng-repeat="admn in administradores") {{admn.nombre}}
+			div
+				label Cliente:
+				select
+					option(value="op1" ng-repeat="cts in clientes") {{cts.nombre}} {{cts.nom_paterno}} {{cts.nombre}}
+
+			div
+				label Auto:
+				select
+					option(value="op1") Civic
+					option(value="op2") Ram
+			div
+				label Descripción:
+				select
+					option(value="op1" ng-repeat="mante in mantenimientos") {{mante.descripcion}} ${{mante.costo}}
+			div
+				label Mecanico:
+				select
+					option(value="op1" ng-repeat="meca in mecanicos") {{meca.nombre}}
+			div
+				label Fecha inicio:
+				input(type="date" value="Date")
+			div
+				label Fecha salida:
+				input(type="date" value="Date")
+			div
+				label Hora:
+				input(type="text")
+			div
+				button(ng-click="addCita()") Agregar

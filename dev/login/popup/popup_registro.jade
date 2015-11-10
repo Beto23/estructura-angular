@@ -6,33 +6,21 @@ div.Popup(popup-close)
 				h2.firsth2 Registro<br> de Usuario
 				div
 					label Usuario
-					input(type="text")
+					input(type="text" ng-model="cliente.usuario")
 				div
 					label Nombre
-					input(type="text")
+					input(type="text" ng-model="cliente.nombre")
+				div
+					label Paterno
+					input(type="text" ng-model="cliente.nombre")
+				div
+					label Materno
+					input(type="text" ng-model="cliente.nombre")
 				div
 					label Correo
-					input(type="text")
+					input(type="text" ng-model="cliente.correo")
 				div
 					label Password
-					input(type="password")
+					input(type="password" ng-model="cliente.password")
 				div
-					button(type="submit") Registrar
-		article.Registro-administrador
-			figure.Registro-administrador-img
-			form.Registro-administrador-form
-				h2 Registro de <br>Administrador
-				div
-					label Nombre
-					input(type="text")
-				div
-					label Usuario
-					input(type="text")
-				div
-					label Correo
-					input(type="text")
-				div
-					label Password
-					input(type="password")
-				div
-					button(type="submit") Registrar
+					button(ng-click="addCliente()") Registrar

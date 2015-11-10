@@ -5,9 +5,9 @@ div.Popup2(popup-close)
 			h2 Agregar Mantenimiento
 			div.Form-Mantenimientos-Contenedor
 				label Descripcion:
-				input(type="text")
+				input(type="text" ng-model="mantenimiento.descripcion")
 			div.Form-Mantenimientos-Contenedor
 				label Costo:
-				input(type="text")
+				input(type="text" ng-model="mantenimiento.costo")
 			div.Form-Mantenimientos-Contenedor
-				button Agregar
+				button(ng-click="addMantenimiento()") Agregar

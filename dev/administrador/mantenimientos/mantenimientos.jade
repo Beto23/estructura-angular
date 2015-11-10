@@ -14,13 +14,13 @@ section.Contenedor-Mantenimientos
 				p Descripcion
 			th
 				p costo
-		tr
+		tr(ng-repeat="mtto in mantenimientos")
 			td 
-				p 01
+				p {{mtto.id_mantenimiento}}
 			td 
-				p Afinacion
+				p {{mtto.descripcion}}
 			td.Td
 				div
-					p $1000
+					p {{mtto.costo}}
 					i.icon-bin
 					i.icon-pencil

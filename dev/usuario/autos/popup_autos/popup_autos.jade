@@ -4,14 +4,20 @@ div.Popup2(popup-close)
 		form.Contenedor-Popup-Auto-Formulario
 			h2 Agregar Automovil
 			div
+				label Usuario:
+				input(type="text" ng-model="auto.id_cliente" disabled)
+			div
 				label Marca:
-				input(type="text")
+				input(type="text" ng-model="auto.marca")
 			div
 				label Modelo:
-				input(type="text")
+				input(type="text" ng-model="auto.modelo")
 			div
 				label Año:
-				input(type="text")
+				input(type="text" ng-model="auto.year")
 			div
-				button
+				label Color:
+				input(type="text" ng-model="auto.color")
+			div
+				button(ng-click="addAuto()")
 					p Agregar
