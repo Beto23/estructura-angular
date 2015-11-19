@@ -6,24 +6,27 @@ section.Contenedor-Administrador
 			input(type="text")
 			i.icon-printer
 			i(popup-add="<popup-agregar-administrador/>").icon-plus
-	table.Tabla-Administrador
-		tr
-			th
-				p Id
-			th
-				p Nombre
-			th
-				p Correo
-			th
-				p Usuario
-		tr(ng-repeat="admin in administradores")
-			td 
-				p {{admin.id_administrador}}
-			td 
-				p {{admin.nombre}}
-			td 
-				p {{admin.correo}}
-			td.Td
-				div
-					p {{admin.usuario}}
-					i.icon-bin
+	table(fixed-header).Tabla-Administrador
+		thead
+			tr
+				th
+					p Id
+				th
+					p Nombre
+				th
+					p Correo
+				th
+					p Usuario
+		tbody
+			tr(ng-repeat="admin in administradores")
+				td 
+					p {{admin.id_administrador}}
+				td 
+					p {{admin.nombre}}
+				td 
+					p {{admin.correo}}
+				td.Td
+					div
+						p {{admin.usuario}}
+						i(popup-add="<popup-confirmacion-delete-admin/>").icon-bin
+						i(popup-add="<popup-update-administrador administrador='admin'/>").icon-pencil

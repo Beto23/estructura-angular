@@ -1,30 +1,32 @@
 section.Contenedor-Mecanico
-	h2 Agregar Mecanico
+	h2(popup-add="<popup-error/>") Agregar Mecanico
 	div.Iconos-Mecanico
 		form.Form-Mecanico
 			i.icon-search
-			input(type="text")
+			input(type="text" ng-model="search")
 			i.icon-printer
 			i(popup-add="<popup-agregar-mecanico/>").icon-plus
-	table.Tabla-Mecanico
-		tr
-			th
-				p Id
-			th
-				p Nombre
-			th
-				p Paterno
-			th
-				p Materno
-		tr(ng-repeat="meca in mecanicos")
-			td 
-				p {{meca.id_mecanico}}
-			td 
-				p {{meca.nombre}}
-			td
-				p {{meca.nom_paterno}}
-			td.Td
-				div
-					p {{meca.nom_materno}}
-					i.icon-bin
-					i.icon-pencil
+	table(fixed-header).Tabla-Mecanico
+		thead
+			tr
+				th
+					p Id
+				th
+					p Nombre
+				th
+					p Paterno
+				th
+					p Materno
+		tbody
+			tr(ng-repeat="meca in mecanicos | filter:search")
+				td 
+					p {{meca.id_mecanico}}
+				td 
+					p {{meca.nombre}}
+				td
+					p {{meca.nom_paterno}}
+				td.Td
+					div
+						p {{meca.nom_materno}}
+						i.icon-bin(popup-add="<popup-confirmacion-delete-meca/>")
+						i(popup-add="<popup-update-mecanico mecanico='meca'/>").icon-pencil

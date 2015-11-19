@@ -3,7 +3,6 @@
 	border: 2px solid white;
 	border-radius: 26px;
 	.Img-Add_Admin
-		background-image:url(../img/civic99.jpg);
 		background-size:cover;
 		background-repeat:no-repeat;
 		width:6em;
@@ -39,3 +38,18 @@
 				background:#107bd6;
 			button:hover
 				backgAutos
+input[type=file]
+	width 6em
+	height 6em
+	position absolute
+	font-family: 'icomoon';
+	&::-webkit-file-upload-button
+		visibility: hidden;
+	&:before
+		height 100%
+		display flex
+		align-items center
+		justify-content center
+		content: "\e91c"
+		color: white;
+		font-size 2em

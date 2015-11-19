@@ -7,7 +7,7 @@
 		return{
 				restrict: 'E',
 				templateUrl: './administrador/mantenimientos/popup_mantenimientos/popup_mantenimientos.html',
-				controller: 'MantenimientoController'
+				controller: 'MantenimientoAgregarController'
 			}
 	}
 

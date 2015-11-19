@@ -3,24 +3,26 @@ section.Contenedor-Mantenimientos
 	div.Iconos-Mantenimientos
 		form.Form-Mantenimientos
 			i.icon-search
-			input(type="text")
+			input(type="text" ng-model="search")
 			i.icon-printer
 			i(popup-add="<popup-agregar-mantenimiento/>").icon-plus
-	table.Tabla-Mantenimientos
-		tr
-			th
-				p Id
-			th
-				p Descripcion
-			th
-				p costo
-		tr(ng-repeat="mtto in mantenimientos")
-			td 
-				p {{mtto.id_mantenimiento}}
-			td 
-				p {{mtto.descripcion}}
-			td.Td
-				div
-					p {{mtto.costo}}
-					i.icon-bin
-					i.icon-pencil
+	table(fixed-header).Tabla-Mantenimientos
+		thead
+			tr
+				th
+					p Id
+				th
+					p Descripcion
+				th
+					p costo
+		tbody
+			tr(ng-repeat="mtto in mantenimientos | filter:search")
+				td 
+					p {{mtto.id_mantenimiento}}
+				td 
+					p {{mtto.descripcion}}
+				td.Td
+					div
+						p $ {{mtto.costo}}
+						i.icon-bin(popup-add="<popup-confirmacion-delete-mante/>")
+						i.icon-pencil(popup-add="<popup-update-mantenimiento mantenimiento='mtto'/>")

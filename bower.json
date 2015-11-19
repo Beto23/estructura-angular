@@ -17,5 +17,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "Angular-swx-session-storage ($sessionStorage)": "angular-swx-session-storage#~0.0.8"
+  }
 }

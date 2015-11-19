@@ -7,7 +7,7 @@
 		return{
 				restrict: 'E',
 				templateUrl: './administrador/admin/popup_admin/popup_admin.html',
-				controller:'AdminController'
+				controller:'ControllerAgregarAdmin'
 			}
 	}
 

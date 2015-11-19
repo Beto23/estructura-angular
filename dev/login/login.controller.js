@@ -3,24 +3,35 @@
 	//modulo al qe pertenece
 	angular.module('app.Login')
 	.controller('LoginController', LoginController);
-	LoginController.$inject = ['$scope', '$compile','LoginService', '$state','HelpersFactory'];
+	LoginController.$inject = ['$scope', '$compile','LoginService', '$state','HelpersFactory','AdministradorFactory', 'UsuarioFactory'];
 
-	function LoginController($scope, $compile, LoginService, $state, HelpersFactory){
+	function LoginController($scope, $compile, LoginService, $state, HelpersFactory, AdministradorFactory, UsuarioFactory){
 		$scope.usuario={};
 		var helper = HelpersFactory;
+		var admin = AdministradorFactory;
+		var user = UsuarioFactory;
+		//console.log(admin.getInfo());
+		//console.log(user.getInfo());
+
 		$scope.login=function(){
 			LoginService
 				.login($scope.usuario)
 				.then(function(res){
-					console.log(res)
-					if (res.tipoUsuario=='administrador') {
-						$state.go('administrador.historial');
-						helper.popupClose();
-					};
-					if (res.tipoUsuario=='cliente') {
-						$state.go('perfil.historial');
-						helper.popupClose();
-					};
+					if(res.estatus == 'ok'){
+						if(res.tipoUsuario == 'admin'){
+							console.log(res.msj);
+							admin.setInfo(res.admin);
+							helper.popupClose();
+							$state.go('administrador.historial');
+						} else {
+							console.log(res.msj);
+							user.setInfo(res.cliente);
+							helper.popupClose();
+							$state.go('perfil.historial');
+						}
+					}else {
+						console.log(res.msj);
+					}
 				})
 				.catch(function(res){
 					console.log(res)

@@ -1,0 +1,54 @@
+.Popup3
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:transparent;
+	z-index:1;
+	background:rgba(0,0,9,0.97);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	.Contenedor-Error
+		display:flex;
+		background:white;
+		border-radius:5px
+		padding: 2em;
+		background: white;
+		border-radius: 18px;
+		border: 2px solid white;
+		&-Icono
+			figure
+				width:10em;
+				height:10em;
+				background-image:url(../img/error.png);
+				background-size:10em;
+				background-repeat:no-repeat;
+		&-Msj
+			margin-left:2em;
+			color #6D6363
+			text-align:center;
+			font-size:1.3em;
+			h4
+				margin: 0;
+			h4:first-child
+				border-bottom: 2px solid #6D6363;
+				padding-bottom: 1em;
+			h4:last-child
+				margin-top:1em;
+				color blue;
+			button
+				font-size .85em;
+				border 0;
+				margin-top 1em;
+				width: 7em;
+				border-radius: 9px;
+				padding: .3em 1em;
+				background: #FF6347;
+				color white;
+				transition: background .5s;
+			button:hover
+				background:#6C207F;
+			button:last-child
+				margin-left:2em;

@@ -7,7 +7,7 @@
 		return{
 				restrict: 'E',
 				templateUrl: './administrador/add_mecanico/popup_mecanico/popup_mecanico.html',
-				controller: 'ControllerMecanico'
+				controller: 'ControllerAgregarMecanico'
 			}
 	}
 

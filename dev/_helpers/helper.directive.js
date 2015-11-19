@@ -4,6 +4,31 @@
 		.module('app.Helpers')
 		.directive('popupClose', popupClose)
 		.directive('popupAdd', popupAdd)
+		.directive('fileUpload', fileUpload)
+
+		fileUpload.$inject = ['HelpersService'];
+
+		function fileUpload(HelpersService){
+			return {
+				restrict: 'A',
+				scope:{
+					fileUpload:'='
+				},
+				link: function(scope, element, attrs) {
+					element.bind('change', function(){
+						var file = element[0].files[0];
+						HelpersService
+							.upload(file)
+							.then(function(response){
+								scope.fileUpload = response.url;
+							})
+							.catch(function(response){
+								console.log(response);
+							});
+					});
+				}
+			}
+		}
 
 		function popupClose(){
 			return{

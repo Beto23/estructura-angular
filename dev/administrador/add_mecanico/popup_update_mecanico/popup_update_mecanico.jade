@@ -1,0 +1,16 @@
+div.Popup2(popup-close)
+	section.Contenedor-Popup-Mecanico
+		figure.Img-Mecanico
+		form.Form-Mecanico
+			h2 Actualizar Mecanico
+			div.Form-Mecanico-Contenedor
+				label Nombre:
+				input(type="text" ng-model="mecanicoUpdate.nombre")
+			div.Form-Mecanico-Contenedor
+				label Paterno:
+				input(type="text" ng-model="mecanicoUpdate.nom_paterno")
+			div.Form-Mecanico-Contenedor
+				label Materno:
+				input(type="text" ng-model="mecanicoUpdate.nom_materno")
+			div.Form-Mecanico-Contenedor
+				button(ng-click="updateMecanico()") Actualizar

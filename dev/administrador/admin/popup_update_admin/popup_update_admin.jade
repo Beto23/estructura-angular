@@ -1,0 +1,17 @@
+div.Popup2(popup-close)
+	section.Contenedor-Popup-Add_Admin
+		figure.Img-Add_Admin(style="position:relative; background-image: url({{administradorUpdate.imagen}})")
+			input(type="file" file-upload="administradorUpdate.imagen")
+		form.Form-Add_Admin
+			h2 Actualizar Administrador
+			div.Form-Add_Admin-Contenedor
+				label Nombre:
+				input(type="text" ng-model="administradorUpdate.nombre")
+			div.Form-Add_Admin-Contenedor
+				label Correo:
+				input(type="text" ng-model="administradorUpdate.correo")
+			div.Form-Add_Admin-Contenedor
+				label Password:
+				input(type="password" ng-model="administradorUpdate.password")
+			div.Form-Add_Admin-Contenedor
+				button(ng-click="updateAdminsitrador()") Modificar

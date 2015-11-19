@@ -3,11 +3,13 @@
 	//modulo de rutas - ui-router
 	angular.module('app', [
 		'ui.router',
+		'app.constants',
+		'swxSessionStorage',
+		'anguFixedHeaderTable',
 		'app.Login',
 		'app.Administrador',
 		'app.Usuario',
-		'app.Helpers',
-		'app.constants'
+		'app.Helpers'
 	])
 	.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider){ 
 
@@ -24,14 +26,16 @@
 			.state('perfil', {
 				abstract:true,
 				url: '/perfilUser',
-				templateUrl: './usuario/usuario.html'
+				templateUrl: './usuario/usuario.html',
+				controller: 'UsuarioController'
 			})
 		$stateProvider
 			.state('perfil.historial', {
 				url: '/historial',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./usuario/historial/historial.html"
+						templateUrl:"./usuario/historial/historial.html",
+						controller:'HistorialController'
 					}
 				}
 			})
@@ -59,7 +63,8 @@
 			.state('administrador', {
 				//abstract:true,
 				url: '/perfilAdmin',
-				templateUrl: './administrador/administrador.html'
+				templateUrl: './administrador/administrador.html',
+				controller: 'AdministradorController'
 			})
 		$stateProvider
 			.state('administrador.citas', {

@@ -1,4 +1,7 @@
 require('./usuario.module');
+require('./usuario.factory');
+require('./usuario.controller');
 require('./usuario.service');
 require('./autos/_autos');
-require('./consejos/_consejos');
+require('./historial/historial.controller');
+require('./popup_update_usuario/_popup_update_usuario');

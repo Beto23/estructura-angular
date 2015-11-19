@@ -1,0 +1,23 @@
+div.Popup2(popup-close)
+	section.Contenedor-Popup-Update-User
+		figure.Img-Update-User(style="position:relative; background-image: url({{clienteUpdate.imagen}})")
+			input(type="file" file-upload="clienteUpdate.imagen")
+		form.Form-Update-User
+			h2 Actualizar Perfil
+			div.Form-Update-User-Contenedor
+				label Nombre:
+				input(type="text" ng-model="clienteUpdate.nombre")
+			div.Form-Update-User-Contenedor
+				label Paterno:
+				input(type="text" ng-model="clienteUpdate.nombre")
+			div.Form-Update-User-Contenedor
+				label Materno:
+				input(type="text" ng-model="clienteUpdate.nombre")
+			div.Form-Update-User-Contenedor
+				label Correo:
+				input(type="text" ng-model="clienteUpdate.correo")
+			div.Form-Update-User-Contenedor
+				label Password:
+				input(type="password" ng-model="clienteUpdate.password")
+			div.Form-Update-User-Contenedor
+				button(ng-click="updateCliente()") Modificar

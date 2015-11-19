@@ -1,17 +1,17 @@
 header.Header-Perfil
 	div.Logo
 		figure
-	h2 Administrador
+	//h2 Administrador
 	//-i.icon-whatsapp
 section.Contenedor-Perfil
 	div.Info
 		div.About
 			div.Iconos-Portada
 				p
-					i.icon-pencil
-					i.icon-camera
-			figure.Img-cliente
-			h4 Beto Lugo
+					i(popup-add="<popup-update-administrador administrador='infoAdmin'/>").icon-pencil
+					//i.icon-camera
+			figure.Img-cliente(style="background-image: url({{infoAdmin.imagen}})")
+			h4 {{infoAdmin.nombre}}
 		nav.Navegacion
 			div.Navegacion-Contenedor
 				button(ui-sref='administrador.historial') Historial

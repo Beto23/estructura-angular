@@ -2,37 +2,37 @@ div.Popup2(popup-close)
 	section.Contenedor-Admin
 		figure
 		form.Form-Admin
+			//{{citaUpdate.prueba}}
 			h2 Actualizar Cita
 			div
 				label Administrador:
-				select
-					option(value="op1" ng-repeat="admn in administradores") {{admn.nombre}}
+				select(ng-model="citaUpdate.IdAdmin")
+					option(value="{{admn.id_administrador}}" ng-repeat="admn in administradores") {{admn.nombre}}
 			div
 				label Cliente:
-				select
-					option(value="op1" ng-repeat="cts in clientes") {{cts.nombre}} {{cts.nom_paterno}} {{cts.nombre}}
+				select(ng-model="citaUpdate.IdCliente")
+					option(value="{{cts.id_cliente}}" ng-repeat="cts in clientes") {{cts.nombre}} {{cts.nom_paterno}} {{cts.nom_materno}}
 
 			div
 				label Auto:
-				select
-					option(value="op1") Civic
-					option(value="op2") Ram
+				select(ng-model="citaUpdate.IdAuto")
+					option(value="{{car.id_auto}}" ng-repeat="car in autosUpdate") {{car.modelo}}
 			div
 				label Descripción:
-				select
-					option(value="op1" ng-repeat="mante in mantenimientos") {{mante.descripcion}} ${{mante.costo}}
+				select(ng-model="citaUpdate.IdMantenimiento")
+					option(value="{{mante.id_mantenimiento}}" ng-repeat="mante in mantenimientos") {{mante.descripcion}} ${{mante.costo}}
 			div
 				label Mecanico:
-				select
-					option(value="op1" ng-repeat="meca in mecanicos") {{meca.nombre}}
+				select(ng-model="citaUpdate.IdMecanico")
+					option(value="{{meca.id_mecanico}}" ng-repeat="meca in mecanicos") {{meca.nombre}}
 			div
 				label Fecha inicio:
-				input(type="date" value="Date")
+				input(type="date" ng-model="citaUpdate.CitaFechaInicio")
 			div
 				label Fecha salida:
-				input(type="date" value="Date")
+				input(type="date" ng-model="citaUpdate.CitaFechaFin")
 			div
 				label Hora:
-				input(type="text")
+				input(type="text" ng-model="citaUpdate.CitaHora")
 			div
-				button(ng-click="addCita()") Agregar
+				button(ng-click="citaAcualizar()") Modificar

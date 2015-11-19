@@ -142,6 +142,155 @@
 					deferred.resolve(res);
 				})
 				.catch(function(res) {
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		//Ver todos lAS citas que hay
+		function getCitas(){
+			var deferred = $q.defer();
+
+			$http
+				.get(URL.API + 'getCitas')
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		//Ver todos los autosByclientes que hay
+		function getAutosByClientes(id){
+			var deferred = $q.defer();
+
+			$http
+				.get(URL.API + 'getAutosByClientes/' + id)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function putCita(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putCita', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function putMecanicos(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putMecanicos', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function deleteCita(citaId){
+			var deferred = $q.defer();
+			var citaId = angular.fromJson(citaId);
+
+			$http
+				.delete(URL.API + 'deleteCita', {data: citaId})
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function deleteMecanico(mecanicoId){
+			var deferred = $q.defer();
+			var mecanicoId = angular.fromJson(mecanicoId);
+
+			$http
+				.delete(URL.API + 'deleteMecanico', {data: mecanicoId})
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function deleteMantenimiento(mantenimientoId){
+			var deferred = $q.defer();
+			var mantenimientoId = angular.fromJson(mantenimientoId);
+
+			$http
+				.delete(URL.API + 'deleteMantenimiento', {data: mantenimientoId})
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function putAdministrador(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putAdministrador', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function putMantenimiento(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putMantenimientos', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
 					//console.log(res);
 					deferred.reject(res);
 				});
@@ -158,7 +307,16 @@
 			getMecanico:getMecanico,
 			getAdministradores:getAdministradores,
 			getClientes:getClientes,
-			postCitas:postCitas
+			postCitas:postCitas,
+			getAutosByClientes:getAutosByClientes,
+			getCitas:getCitas,
+			putCita:putCita,
+			putMecanicos:putMecanicos,
+			deleteCita:deleteCita,
+			deleteMecanico:deleteMecanico,
+			deleteMantenimiento:deleteMantenimiento,
+			putAdministrador: putAdministrador,
+			putMantenimiento: putMantenimiento
 
 		};
 	}

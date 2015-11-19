@@ -5,19 +5,19 @@ div.Popup2(popup-close)
 			h2 Modificar Cliente
 			div.Form-Cliente-Contenedor
 				label Nombre:
-				input(type="text")
+				input(type="text" ng-model="clienteUpdate.nombre")
 			div.Form-Cliente-Contenedor
 				label Paterno:
-				input(type="text")
+				input(type="text" ng-model="clienteUpdate.nom_paterno")
 			div.Form-Cliente-Contenedor
 				label Materno:
-				input(type="text")
+				input(type="text" ng-model="clienteUpdate.nom_materno")
 			div.Form-Cliente-Contenedor
 				label Usuario:
-				input(type="text")
+				input(type="text" ng-model="clienteUpdate.usuario")
 			div.Form-Cliente-Contenedor
 				label Password:
-				input(type="password")
+				input(type="password" ng-model="clienteUpdate.password")
 			div.Form-Cliente-Contenedor
 				label Repetir password:
 				input(type="password")

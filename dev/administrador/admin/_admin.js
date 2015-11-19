@@ -1,2 +1,4 @@
-require('./popup_admin/popup_admin.directive');
+require('./popup_admin/_popup_admin');
+require('./popup_update_admin/_popup_update_admin');
+require('./popup_ConfirmacionAdmin/_popup_ConfirmacionAdmin');
 require('./admin.controller');

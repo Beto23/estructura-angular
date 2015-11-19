@@ -1,12 +1,16 @@
 (function() {
 
 	angular.module('app.Administrador')
-	.directive('popupAgregarClientes', popupAgregarClientes);
+	.directive('popupUpdateCliente', popupUpdateCliente);
 
-	function popupAgregarClientes(){
+	function popupUpdateCliente(){
 		return{
 				restrict: 'E',
-				templateUrl: './administrador/clientes/popup_clientes/popup_clientes.html'
+				scope: {
+					cliente: "="
+				},
+				templateUrl: './administrador/clientes/popup_clientes/popup_clientes.html',
+				controller: 'ControllerUpdateCliente'
 			}
 	}
 

@@ -6,8 +6,11 @@
 	function popupUpdateCita(){
 		return{
 				restrict: 'E',
+				scope: {
+					cita: "="
+				},
 				templateUrl: './administrador/citas/popup_update_citas/popup_update_citas.html',
-				controller:'CitaController'
+				controller:'AdminCitaUpateController'
 			}
 	}
 

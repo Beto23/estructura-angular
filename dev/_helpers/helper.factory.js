@@ -15,7 +15,30 @@
 			popup[0].remove();
 		};
 
+		helperFactory.dateYYYYMMDD = function(date){
+			var date = new Date(date);
+			var day = date.getDate();
+			var month = date.getMonth() + 1;
+			var year = date.getFullYear();
+
+			if(day < 10){
+				day = '0' + day;
+			}
+			if(month < 10){
+				month = '0' + month;
+			}
+
+			date = year + '-' + month + '-' + day;
+
+			return date;
+		}
+
+		helperFactory.stringToDate = function(date){
+			var date = date.split('-');
+			date = date[0] + '/' + date[1] + '/' + date[2];
+
+			return new Date(date);
+		}
 		return helperFactory;
 	}
-
 })();

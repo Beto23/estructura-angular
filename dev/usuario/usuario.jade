@@ -8,10 +8,10 @@ section.Contenedor-Perfil
 		div.About
 			div.Iconos-Portada
 				p
-					i.icon-pencil
+					i(popup-add="<popup-actualizar-usuario cliente='infoUser'/>").icon-pencil
 					i.icon-camera
-			figure.Img-cliente
-			h4 Beto Lugo
+			figure.Img-cliente(style="background-image: url({{infoUser.imagen}})")
+			h4 {{infoUser.nombre}} {{infoUser.nom_paterno}} {{infoUser.nom_materno}}
 		nav.Navegacion
 			div.Navegacion-Contenedor
 				button(ui-sref='perfil.historial') Historial

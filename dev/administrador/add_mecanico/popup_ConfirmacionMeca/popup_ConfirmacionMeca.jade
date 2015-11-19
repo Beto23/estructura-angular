@@ -1,0 +1,7 @@
+div(popup-close).PopupDelete
+	.VentanaConfirmacion
+		h2(ng-click="eliminarMe()")  Confirmacion
+		i.icon-warning
+		p ¿Desea eliminar el mecanico?
+		button(ng-click="cerrarPopup()").Cancelar Cancelar
+		button(ng-click="deleteMecanico(meca)").Aceptar Aceptar

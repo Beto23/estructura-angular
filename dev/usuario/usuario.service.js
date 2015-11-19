@@ -1,5 +1,5 @@
 (function(){
-	angular.module('app.Administrador')
+	angular.module('app.Usuario')
 
 	.factory('ClienteService',ClienteService)
 
@@ -25,12 +25,47 @@
 
 			return deferred.promise;
 		}
+//actualizar Cliente
+		function putCliente(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putCliente', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function getMisCitas(id){
+			var deferred = $q.defer();
+
+			$http
+				.get(URL.API + 'getMisCitas/' + id)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
 
 
 		//Return de los metodos
 		return {
-			AgregarAutos:AgregarAutos
-
+			AgregarAutos:AgregarAutos,
+			putCliente:putCliente,
+			getMisCitas:getMisCitas
 
 		};
 	}

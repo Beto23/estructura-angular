@@ -7,7 +7,7 @@
 		return{
 				restrict: 'E',
 				templateUrl: './administrador/citas/popup_citas/popup_citas.html',
-				controller:'CitaController'
+				controller:'AdminCitaAgregarController'
 			}
 	}
 

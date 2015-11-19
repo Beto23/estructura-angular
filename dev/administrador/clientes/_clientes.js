@@ -1,2 +1,2 @@
-require('./popup_clientes/popup_clientes.directive');
+require('./popup_clientes/_popup_clientes');
 require('./clientes.controller');
