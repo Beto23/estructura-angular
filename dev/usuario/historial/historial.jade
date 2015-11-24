@@ -3,7 +3,7 @@ section.Contenedor-Historial
 	div.Iconos-Historial-Cliente
 		form.Form-busqueda
 			i.icon-search
-			input(type="text")
+			input(type="text" ng-model="search")
 			i.icon-printer
 	table.Tabla-Historial
 		tr
@@ -15,22 +15,22 @@ section.Contenedor-Historial
 				p Auto
 			th
 				p Total
-		tr
+		tr(ng-repeat="cita in citas | filter:search")
 			td 
-				p 18/sep/2014
+				p {{cita.CitaFechaInicio}}
 			td 
-				p Afinacion completa
+				p {{cita.MantenimientoDescripcion}}
 			td.Td
 				div
-					p Civic
-					i.icon-bin
-					i.icon-pencil
+					p {{cita.AutoModelo}}
+					//i.icon-bin
+					//i.icon-pencil
 			td
-					p $1500
+					p {{cita.Costo | currency}}
 		tr
 			td
 			td
 			td
 			td
-				p $7100
+				p {{costoTotal | currency}}
 

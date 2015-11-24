@@ -1,10 +1,10 @@
 section.Contenedor-Cita
-	h2 Citas
+	h2(popup-add="<popup-welcome-admin/>") Citas
 	div.Iconos-Cita
 		form.Form-busqueda-Cita(action="http://localhost/estructura-angular/backend/pdf/citas.php" method="POST")
 			i.icon-search
 			input(type="text" ng-model="search")
-			button(type="submit").icon-printer
+			button(type="submit").icon-file-pdf
 			i(popup-add="<popup-citas/>").icon-plus
 	table(fixed-header).Tabla-Cita
 		thead

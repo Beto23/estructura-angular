@@ -3,6 +3,7 @@
 	angular
 		.module('app.Helpers')
 		.directive('popupClose', popupClose)
+		.directive('mensajeClose', mensajeClose)
 		.directive('popupAdd', popupAdd)
 		.directive('fileUpload', fileUpload)
 
@@ -26,6 +27,20 @@
 								console.log(response);
 							});
 					});
+				}
+			}
+		}
+		mensajeClose.$inject = ['$state']
+		function mensajeClose($state){
+			return{
+				restrict: 'A',
+				link: function(scope, elem, attrs){
+					//remove directive
+					 elem.bind('click', function(e) {
+					 	if(e.target != this) return;
+						elem.remove();
+						$state.reload()
+					 });
 				}
 			}
 		}

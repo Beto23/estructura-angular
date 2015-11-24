@@ -6,6 +6,6 @@
 
 	function AdministradorController($scope, AdministradorFactory){
 		$scope.infoAdmin = AdministradorFactory.getInfo();
-		console.log($scope.infoAdmin);
+		//console.log($scope.infoAdmin);
 	}
 })();

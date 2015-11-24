@@ -4,20 +4,17 @@ div.Popup2(popup-close)
 		form.Contenedor-Popup-Auto-Formulario
 			h2 Actualizar Automovil
 			div
-				label Usuario:
-				input(type="text" ng-model="auto.id_cliente" disabled)
-			div
 				label Marca:
-				input(type="text" ng-model="auto.marca")
+				input(type="text" ng-model="autoUpdate.marca")
 			div
 				label Modelo:
-				input(type="text" ng-model="auto.modelo")
+				input(type="text" ng-model="autoUpdate.modelo")
 			div
 				label Año:
-				input(type="text" ng-model="auto.year")
+				input(type="text" ng-model="autoUpdate.year")
 			div
 				label Color:
-				input(type="text" ng-model="auto.color")
+				input(type="text" ng-model="autoUpdate.color")
 			div
-				button(ng-click="addAuto()")
-					p Agregar
+				button(ng-click="updateAuto()")
+					p Actualizar

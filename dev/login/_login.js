@@ -1,6 +1,5 @@
 require('./login.module');
 require('./login.controller');
 require('./login.service');
-require('./popup/popup_registro.controller');
-require('./popup/popup_inicioSesion.directive');
-require('./popup/popup_registro.directive');
+require('./popup_inicioSesion/_popup_inicioSesion');
+//require('./popup_registro/_popup_registro');

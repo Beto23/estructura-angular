@@ -7,7 +7,7 @@
 		return{
 				restrict: 'E',
 				templateUrl: './usuario/autos/popup_autos/popup_autos.html',
-				controller:'AutoController'
+				controller:'ControllerAgregarAuto'
 			}
 	}
 

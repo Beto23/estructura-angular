@@ -7,6 +7,7 @@
 
 	function ControllerUpdateMantenimiento($scope, $compile, AdminService, $state,HelpersFactory){
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
 		$scope.mantenimientoUpdate = angular.copy($scope.mantenimiento);
 
 		$scope.updateMantenimiento = function(){
@@ -15,9 +16,8 @@
 				.putMantenimiento($scope.mantenimientoUpdate)
 				.then(function(response){
 					if(response.estatus == 'ok'){
-						console.log(response.msj)
 						helper.popupClose();
-						$state.reload()
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
 					} else {
 						console.log(response.msj);
 					}

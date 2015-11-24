@@ -31,9 +31,181 @@ body
 		background:rgba(88, 73, 73, 0.31);
 	&.fondo_Perfil9
 		background:rgba(88, 73, 73, 0.31);
-button[type=submit].icon-printer
+button[type=submit].icon-file-pdf
 	background none
 	border 0
+	color white;
+	font-size: 1.4em;
+.Popup3
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:transparent;
+	z-index:1;
+	background:rgba(0,0,9,0.97);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	.Contenedor-Error
+		max-width:40.62em;
+		display:flex;
+		background:white;
+		border-radius:5px
+		padding: 2em;
+		background: white;
+		border-radius: 18px;
+		border: 2px solid white;
+		&-Icono
+			figure
+				width:10em;
+				height:10em;
+				background-image:url(../img/error.png);
+				background-size:10em;
+				background-repeat:no-repeat;
+		&-Msj
+			margin-left:2em;
+			color #6D6363
+			text-align:center;
+			font-size:1.3em;
+			h4
+				margin: 0;
+			h4:first-child
+				border-bottom: 2px solid #6D6363;
+				padding-bottom: 1em;
+			h4:last-child
+				margin-top:1em;
+				color blue;
+			button
+				font-size .85em;
+				border 0;
+				margin-top 1em;
+				width: 7em;
+				border-radius: 9px;
+				padding: .3em 1em;
+				background: #FF6347;
+				color white;
+				transition: background .5s;
+			button:hover
+				background:#6C207F;
+			button:last-child
+				margin-left:2em;
+//correcto
+	.Contenedor-Okey
+		max-width:40.62em;
+		display:flex;
+		background:white;
+		border-radius:5px
+		padding: 2em;
+		background: white;
+		border-radius: 18px;
+		border: 2px solid white;
+		&-Icono
+			figure
+				width:10em;
+				height:10em;
+				background-image:url(../img/ok.png);
+				background-size:10em;
+				background-repeat:no-repeat;
+		&-Msj
+			margin-left:2em;
+			color #6D6363
+			text-align:center;
+			font-size:1.3em;
+			h4
+				margin: 0;
+			h4:first-child
+				border-bottom: 2px solid #6D6363;
+				padding-bottom: 1em;
+			h4:last-child
+				margin-top:1em;
+				color blue;
+			button
+				font-size .85em;
+				border 0;
+				margin-top 1em;
+				width: 7em;
+				border-radius: 9px;
+				padding: .3em 1em;
+				background: #FF6347;
+				color white;
+				transition: background .5s;
+			button:hover
+				background:#38B44A;
+			button:last-child
+				margin-left:2em;
+//correcto
+.PopupDelete
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:transparent;
+	z-index:1;
+	background:rgba(0,0,0,0.85);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	.VentanaConfirmacion
+		background: white;
+		width: 40%;
+		border: 2px solid grey;
+		border-radius: 8px;
+		text-align:center;
+		padding:.5em;
+		h2
+			margin:0;
+		.icon-warning
+			font-size: 4em;
+			color: orange;
+		button
+			padding: 0.5em 1.3em;
+			background: white;
+			border: 1px solid black;
+			border-radius: 8px;
+			transition:background .5s;
+		button:hover
+			background:#107bd6;
+		.Cancelar
+			margin-right:6em;
+.Conenedor-Welcome
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:transparent;
+	z-index:1;
+	//background-image:url(../img/imgWelcome.png);
+	background:rgba(0,0,9,0.30);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	align-items: flex-start;
+	section
+		display: flex;
+		color: #FFFFFF;
+		background: #02337B;
+		//border-radius: 25px;
+		padding: 1em;
+		width: 100%;
+		align-items: center;
+		figure
+			width:6em;
+			height:6em;
+			background-size:6em;
+			border-radius:100%;
+			border: 2px solid white;
+			box-shadow: 21px 3px 42px black;
+		h2
+			display: flex;
+			//align-items: center;
+			margin:0 auto;
+		i
+			font-size 2em;
+			cursor pointer;
 @import '../login/login';
 @import '../usuario/usuario';
 @import '../administrador/administrador'

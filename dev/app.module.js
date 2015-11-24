@@ -4,6 +4,8 @@
 	angular.module('app', [
 		'ui.router',
 		'app.constants',
+		'app.Error',
+		'app.Okey',
 		'swxSessionStorage',
 		'anguFixedHeaderTable',
 		'app.Login',
@@ -81,7 +83,8 @@
 				url: '/historial',
 				views: {
 					"contentPerfil": {
-						templateUrl:"./administrador/historial/historial.html"
+						templateUrl:"./administrador/historial/historial.html",
+						controller:'ControllerHistorialCitas'
 					}
 				}
 			})

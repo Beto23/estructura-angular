@@ -43,6 +43,23 @@
 
 			return deferred.promise;
 		}
+		function putAuto(req){
+			var deferred = $q.defer();
+			var req = angular.fromJson(req);
+
+			$http
+				.put(URL.API + 'putAuto', req)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
 		function getMisCitas(id){
 			var deferred = $q.defer();
 
@@ -59,13 +76,48 @@
 
 			return deferred.promise;
 		}
+		function getAutosByClientesUser(id){
+			var deferred = $q.defer();
+
+			$http
+				.get(URL.API + 'getAutosByClientesUser/' + id)
+				.success(function(res) {
+					//console.log(res);
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
+		function deleteAuto(AutoId){
+			var deferred = $q.defer();
+			var AutoId = angular.fromJson(AutoId);
+
+			$http
+				.delete(URL.API + 'deleteAuto', {data: AutoId})
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
 
 
 		//Return de los metodos
 		return {
 			AgregarAutos:AgregarAutos,
 			putCliente:putCliente,
-			getMisCitas:getMisCitas
+			getMisCitas:getMisCitas,
+			getAutosByClientesUser:getAutosByClientesUser,
+			putAuto:putAuto,
+			deleteAuto:deleteAuto
 
 		};
 	}

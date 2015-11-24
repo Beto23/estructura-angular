@@ -4,19 +4,23 @@ section.Contenedor-Usuario-Auto
 		i(popup-add="<popup-agregar-autos/>").icon-directions_car
 	table.Tabla-Autos
 		tr
+			th
+				p Id
 			th 
 				p Marca
 			th 
 				p Modelo
 			th 
 				p Año
-		tr
+		tr(ng-repeat="auto in cars")
+			td
+				p {{auto.id_auto}}
 			td 
-				p Honda
+				p {{auto.marca}}
 			td 
-				p Civic
+				p {{auto.modelo}}
 			td
 				div
-					p 1999
-					i.icon-bin
-					i(popup-add="<popup-update-autos/>").icon-pencil
+					p {{auto.year}}
+					i(popup-add="<popup-confirmacion-delete-auto auto='auto'/>").icon-bin
+					i(popup-add="<popup-update-autos auto='auto'/>").icon-pencil

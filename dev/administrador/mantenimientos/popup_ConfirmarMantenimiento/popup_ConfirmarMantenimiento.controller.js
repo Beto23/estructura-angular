@@ -8,6 +8,12 @@
 	function DeleteMantenimientoController($scope, $compile, AdminService, $state,HelpersFactory){
 
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
+
+
+		$scope.cerrarPopup = function(){
+			helper.popupClose();
+		}
 
 		$scope.cerrarPopup = function(){
 			helper.popupClose();
@@ -18,12 +24,14 @@
 			AdminService.deleteMantenimiento(mantenimientos).then(function(response){
 				console.log(response)
 
-				/*$scope.mecanicos = $scope.mecanicos.filter(function(obj){
-					return (obj.id_mecanico != mantenimientos.id_mantenimientos)
-				});*/
-
+			if(response.estatus == 'ok'){
 				helper.popupClose();
-				$state.reload();
+				body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+			} else {
+				helper.popupClose();
+				body.append($compile("<mensaje-error error='"+ response.msj +"'></mensaje-error>")($scope));
+			}
+
 			})
 				.catch(function(res){
 					console.log(res);

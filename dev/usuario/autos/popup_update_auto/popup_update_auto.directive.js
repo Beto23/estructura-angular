@@ -6,8 +6,11 @@
 	function popupUpdateAutos(){
 		return{
 				restrict: 'E',
+				scope: {
+					auto: "="
+				},
 				templateUrl: './usuario/autos/popup_update_auto/popup_update_auto.html',
-				controller:'AutoController'
+				controller:'ActualizarAutoController'
 			}
 	}
 

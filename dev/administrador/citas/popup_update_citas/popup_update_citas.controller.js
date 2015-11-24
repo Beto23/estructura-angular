@@ -8,6 +8,9 @@
 	function AdminCitaUpateController($scope, $compile, AdminService, $state,HelpersFactory){
 		
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
+
+
 		$scope.citaUpdate = angular.copy($scope.cita);
 			$scope.citaUpdate.CitaFechaInicio = helper.stringToDate($scope.citaUpdate.CitaFechaInicio);
 			$scope.citaUpdate.CitaFechaFin = helper.stringToDate($scope.citaUpdate.CitaFechaFin);
@@ -16,10 +19,10 @@
 				if(id){
 				//ver los autosByClientes
 					$scope.autosUpdate=[];
-					AdminService.getAutosByClientes(id).then(function(response){
-						//cerrar popup
+					AdminService
+						.getAutosByClientes(id)
+						.then(function(response){
 						$scope.autosUpdate=response
-						//console.log(response);
 					}).catch(function(err){
 						console.log(err)
 					});
@@ -34,9 +37,8 @@
 				.putCita(tmp)
 				.then(function(response){
 					if(response.estatus == 'ok'){
-						console.log(response.msj);
 						helper.popupClose();
-						$state.reload()
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
 					} else {
 						console.log(response.msj);
 					}
@@ -106,10 +108,5 @@
 			console.log(err)
 		});
 
-
-		
-
-			
-		
 	}
 })();

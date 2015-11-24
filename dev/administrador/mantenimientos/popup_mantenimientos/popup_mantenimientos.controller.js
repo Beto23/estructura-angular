@@ -8,16 +8,21 @@
 	function MantenimientoAgregarController($scope, $compile, AdminService, $state,HelpersFactory){
 		
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
+
 
 		$scope.mantenimiento={};
 		$scope.addMantenimiento = function(){
 			console.log("agregando Mantenimiento");
 			AdminService.agregarMantenimientos($scope.mantenimiento).then(function(response){
 				$scope.mantenimientos.push(response)
-				//console.log(response)
-				//cerrar popup
-				helper.popupClose();
-				$state.reload()
+					if(response.estatus == 'ok'){
+						helper.popupClose();
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+					} else {
+						console.log(response.msj);
+					}
+
 			}).catch(function(err){
 				console.log(err)
 			});

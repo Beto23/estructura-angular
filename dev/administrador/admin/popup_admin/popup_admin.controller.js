@@ -8,15 +8,24 @@
 	function ControllerAgregarAdmin($scope, $compile, AdminService, $state,HelpersFactory){
 		
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
+
 
 		//agregar un adminitrador
 		$scope.administrador={};
 		$scope.addAdminsitrador = function(){
 			console.log("agregando administrador");
-			AdminService.agregarAdministradores($scope.administrador).then(function(response){
-				$scope.administradores.push(response)
-				//cerrar popup
-				helper.popupClose();
+			AdminService
+			.agregarAdministradores($scope.administrador)
+			.then(function(response){
+				$scope.administradores
+				.push(response)
+					if(response.estatus == 'ok'){
+						helper.popupClose();
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+					} else {
+						console.log(response.msj);
+					}
 			}).catch(function(err){
 				console.log(err)
 			});

@@ -8,6 +8,8 @@
 	function ControllerUpdateAdminitrador($scope, $compile, AdminService, $state,HelpersFactory, AdministradorFactory){
 		var helper = HelpersFactory;
 		$scope.administradorUpdate = angular.copy($scope.administrador);
+		var body = angular.element(document).find('body');
+
 
 		$scope.updateAdminsitrador = function(){
 			AdminService
@@ -16,7 +18,7 @@
 					if(response.estatus == 'ok'){
 						AdministradorFactory.setInfo($scope.administradorUpdate);
 						helper.popupClose();
-						$state.reload()
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
 					} else {
 						console.log(response.msj);
 					}

@@ -1,3 +1,4 @@
-require('./popup_autos/popup_autos.directive');
-require('./popup_update_auto/popup_update_auto.directive');
+require('./popup_autos/_popup_autos');
+require('./popup_update_auto/_popup_update_auto');
+require('./popup_confirmacionAuto/_popup_confirmacionAuto');
 require('./autos.controller');

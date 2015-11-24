@@ -7,6 +7,7 @@
 
 	function AdminCitaAgregarController($scope, $compile, AdminService, $state,HelpersFactory, AdministradorFactory){
 		var admin = AdministradorFactory.getInfo();
+		var body = angular.element(document).find('body');
 
 		var helper = HelpersFactory;
 //Ver los clietes
@@ -52,14 +53,16 @@
 			cita.fecha_inicio=helper.dateYYYYMMDD(cita.fecha_inicio);
 			cita.fecha_fin=helper.dateYYYYMMDD(cita.fecha_fin);
 
-			AdminService.postCitas(cita).then(function(response){
-				if(response.estatus == 'ok'){
-					console.log(response.msj);
-					helper.popupClose();
-					$state.reload();
-				} else {
-					console.log(response.msj);
-				}
+			AdminService
+				.postCitas(cita)
+				.then(function(response){
+					if(response.estatus == 'ok'){
+						console.log(response.msj);
+						helper.popupClose();
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+					} else {
+						console.log(response.msj);
+					}
 			}).catch(function(err){
 				console.log(err);
 			});

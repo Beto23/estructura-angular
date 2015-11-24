@@ -11,9 +11,9 @@
 //ver mecanicos
 		$scope.mecanicos=[];
 		AdminService.getMecanico().then(function(response){
-			console.log(response);
+			//console.log(response);
 			$scope.mecanicos=response
-			console.log(response);
+			//console.log(response);
 		}).catch(function(err){
 			console.log(err)
 		});

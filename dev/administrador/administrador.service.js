@@ -263,6 +263,22 @@
 
 			return deferred.promise;
 		}
+		function deleteAdministrador(adminId){
+			var deferred = $q.defer();
+			var adminId = angular.fromJson(adminId);
+			console.log(adminId);
+			$http
+				.delete(URL.API + 'deleteAdministrador', {data: adminId})
+				.success(function(res) {
+					deferred.resolve(res);
+				})
+				.catch(function(res) {
+					//console.log(res);
+					deferred.reject(res);
+				});
+
+			return deferred.promise;
+		}
 		function putAdministrador(req){
 			var deferred = $q.defer();
 			var req = angular.fromJson(req);
@@ -316,7 +332,8 @@
 			deleteMecanico:deleteMecanico,
 			deleteMantenimiento:deleteMantenimiento,
 			putAdministrador: putAdministrador,
-			putMantenimiento: putMantenimiento
+			putMantenimiento: putMantenimiento,
+			deleteAdministrador:deleteAdministrador
 
 		};
 	}

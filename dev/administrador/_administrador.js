@@ -6,5 +6,6 @@ require('./citas/_citas');
 require('./clientes/_clientes');
 require('./add_mecanico/_add_mecanico');
 require('./mantenimientos/_mantenimientos');
-//require('./autos/_autos');
+require('./historial/historial-citas.controller');
+require('./popup_welcome_admin/_popup_welcome_admin');
 require('./admin/_admin');

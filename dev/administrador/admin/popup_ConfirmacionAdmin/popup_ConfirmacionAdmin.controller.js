@@ -8,16 +8,34 @@
 	function DeleteAdministradorController($scope, $compile, AdminService, $state,HelpersFactory){
 
 		var helper = HelpersFactory;
+		var body = angular.element(document).find('body');
 
-		//elminar una cita
-/*		$scope.deleteMecanico = function(mecanicoId){
-			AdminService.deleteMecanico($scope.id_mecanico).then(function(response){
+
+		$scope.cerrarPopup = function(){
+			helper.popupClose();
+		}
+
+		$scope.cerrarPopup = function(){
+			helper.popupClose();
+		}
+		//elminar un admin
+		$scope.deleteAdmin = function(administrador){
+			console.log(administrador);
+			AdminService.deleteAdministrador(administrador).then(function(response){
 				console.log(response)
+
+			if(response.estatus == 'ok'){
 				helper.popupClose();
+				body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+			} else {
+				helper.popupClose();
+				body.append($compile("<mensaje-error error='"+ response.msj +"'></mensaje-error>")($scope));
+			}
+
 			})
 				.catch(function(res){
 					console.log(res);
 				});
-		}*/
+		}
 	}
 })();

@@ -3,24 +3,24 @@
 	//modulo al qe pertenece
 	angular.module('app.Usuario')
 	.controller('AutoController', AutoController);
-	AutoController.$inject = ['$scope', '$compile','ClienteService', '$state','HelpersFactory'];
+	AutoController.$inject = ['$scope', '$compile','ClienteService', '$state', 'HelpersFactory', 'UsuarioFactory'];
 
-	function AutoController($scope, $compile, ClienteService, $state,HelpersFactory){
+	function AutoController($scope, $compile, ClienteService, $state,HelpersFactory, UsuarioFactory){
 		
 		var helper = HelpersFactory;
+		var cliente = UsuarioFactory.getInfo();
+		console.log(cliente.id_cliente);
 
-		$scope.auto={};
-		$scope.addAuto = function(){
-			console.log("agregando auto");
-			ClienteService.AgregarAutos($scope.auto).then(function(response){
-				//$scope.mantenimientos.push(response)
-				//console.log(response)
-				//cerrar popup
-				helper.popupClose();
-			}).catch(function(err){
-				console.log(err)
-			});
-		}
-	}
+	$scope.cars=[];
+	ClienteService.
+		getAutosByClientesUser(cliente.id_cliente)
+		.then(function(response){
+		$scope.cars=response
+		console.log(response);
+	}).catch(function(err){
+		console.log(err)
+	});
 
+
+}
 })();
