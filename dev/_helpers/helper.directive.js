@@ -6,7 +6,7 @@
 		.directive('mensajeClose', mensajeClose)
 		.directive('popupAdd', popupAdd)
 		.directive('fileUpload', fileUpload)
-
+		
 		fileUpload.$inject = ['HelpersService'];
 
 		function fileUpload(HelpersService){

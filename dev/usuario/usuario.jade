@@ -1,7 +1,17 @@
 header.Header-Perfil
 	div.Logo
 		figure
-	h2(popup-add="<popup-Welcome/>") Perfil usuarioo
+	div.opcions
+		div.XML
+			a(href="http://localhost/estructura-angular/xml/bbdd.xml" target="blank")
+					img(src="img/xml.png")
+		div.JASON
+				a(href="http://localhost/estructura-angular/backend/index.php/getCitas" target="blank").JASON
+					img(src="img/json.png")
+		div.Salir
+			button(ng-click="salir()") salir
+				i.icon-switch
+	//h2 Administrador
 	//-i.icon-whatsapp
 section.Contenedor-Perfil
 	div.Info
@@ -9,7 +19,6 @@ section.Contenedor-Perfil
 			div.Iconos-Portada
 				p
 					i(popup-add="<popup-actualizar-usuario cliente='infoUser'/>").icon-pencil
-					i.icon-camera
 			figure.Img-cliente(style="background-image: url({{infoUser.imagen}})")
 			h4 {{infoUser.nombre}} {{infoUser.nom_paterno}} {{infoUser.nom_materno}}
 		nav.Navegacion

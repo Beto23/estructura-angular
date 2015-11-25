@@ -5,7 +5,12 @@
 
 	function WelcomeController($scope, $compile, $state, HelpersFactory, UsuarioFactory ){
 		cliente=UsuarioFactory.getInfo();
-		$scope.info =cliente;
+		$scope.infoCte =cliente;
+		helper=HelpersFactory;
+		$scope.cerrarPopup = function(){
+			console.log('33')
+			helper.popupClose();
+		}
 
 	}
 })()

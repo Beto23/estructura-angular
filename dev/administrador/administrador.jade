@@ -1,10 +1,16 @@
 header.Header-Perfil
 	div.Logo
 		figure
-	div.Salir
-		button salir
-		a(href="http://localhost/xml/bbdd.xml" target="blank") XML
-		a(href="http://localhost/estructura-angular/backend/index.php/getApp" target="blank") JSON
+	div.opcions
+		div.XML
+			a(href="http://localhost/estructura-angular/xml/bbdd.xml" target="blank")
+					img(src="img/xml.png")
+		div.JASON
+				a(href="http://localhost/estructura-angular/backend/index.php/getCitas" target="blank").JASON
+					img(src="img/json.png")
+		div.Salir
+			button(ng-click="salir()") salir
+				i.icon-switch
 	//h2 Administrador
 	//-i.icon-whatsapp
 section.Contenedor-Perfil

@@ -1,10 +1,10 @@
 section.Contenedor-Mecanico
 	h2(popup-add="<popup-error/>") Mecanicos
 	div.Iconos-Mecanico
-		form.Form-Mecanico
+		form(action="http://localhost/estructura-angular/backend/pdf/mecanicos.php" method="POST").Form-Mecanico
 			i.icon-search
 			input(type="text" ng-model="search")
-			i.icon-printer
+			button(type="submit").icon-file-pdf
 			i(popup-add="<popup-agregar-mecanico/>").icon-plus
 	table(fixed-header).Tabla-Mecanico
 		thead

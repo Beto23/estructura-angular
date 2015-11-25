@@ -1,5 +1,38 @@
 .Header-Perfil
 	display:flex;
+	justify-content: space-between;
+	.opcions
+		display:flex;
+		&>*
+			margin 0 1em
+		.XML, .JASON
+			display:flex;
+			a
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				//background: white;
+				border-radius: 26px;
+				padding: .2em 1em;
+		.JASON
+			margin-left:.5em;
+			img
+				height 4em
+		.XML
+			img
+				height 3em
+		.Salir
+			display: flex;
+			align-items: flex-end;
+			margin-bottom .3em;
+			button
+				background none;
+				border 0;
+				color white;
+				.icon-switch
+					color #FF4500;
+					font-size 1.5em;
+					margin-left .3em;
 .Contenedor-Perfil
 	.Info
 		.About

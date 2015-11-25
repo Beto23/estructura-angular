@@ -1,10 +1,10 @@
 section.Contenedor-Administrador
 	h2 Administrador
 	div.Iconos-Administrador
-		form.Form-Administrador
+		form(action="http://localhost/estructura-angular/backend/pdf/administradores.php" method="POST").Form-Administrador
 			i.icon-search
 			input(type="text")
-			//i.icon-printer
+			button(type="submit").icon-file-pdf
 			i(popup-add="<popup-agregar-administrador/>").icon-plus
 	table(fixed-header).Tabla-Administrador
 		thead

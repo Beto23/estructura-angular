@@ -2,10 +2,10 @@
 section.Contenedor-Clientes
 	h2 Clientes
 	div.Iconos-Clientes
-		form.Form-Clientes
+		form(action="http://localhost/estructura-angular/backend/pdf/clientes.php" method="POST").Form-Clientes
 			i.icon-search
 			input(type="text" ng-model="search")
-			i.icon-printer
+			button(type="submit").icon-file-pdf
 			//i.icon-plus
 	table(fixed-header).Tabla-Clientes
 		thead

@@ -23,7 +23,7 @@
 				console.log(response)
 			if(response.estatus == 'ok'){
 				helper.popupClose();
-				$state.reload();
+				body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
 			} else {
 				helper.popupClose();
 				body.append($compile("<mensaje-error error='"+ response.msj +"'></mensaje-error>")($scope));

@@ -33,6 +33,18 @@ div.Popup2(popup-close)
 				input(type="date" ng-model="citaUpdate.CitaFechaFin")
 			div
 				label Hora:
-				input(type="text" ng-model="citaUpdate.CitaHora")
+				select(ng-model="citaUpdate.CitaHora")
+									option 8:00
+									option 9:00
+									option 10:00
+									option 11:00
+									option 12:00
+									option 13:00
+									option 14:00
+									option 15:00
+									option 16:00
+									option 17:00
+									option 18:00
+									option 19:00
 			div
 				button(ng-click="citaAcualizar()") Modificar

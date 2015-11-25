@@ -14,9 +14,5 @@
 			helper.popupClose();
 		}
 
-		/*$timeout(function() {
-			$scope.eventoExistente=false;
-		}, 4000);*/
-
 	}
 })();

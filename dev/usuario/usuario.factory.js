@@ -16,6 +16,10 @@
 				$sessionStorage.put('User', info);
 			}
 
+			User.logout = function(){
+				$sessionStorage.empty();
+			}
+
 			return User;
 		}
 })();

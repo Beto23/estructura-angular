@@ -16,6 +16,10 @@
 				$sessionStorage.put('Admin', info);
 			}
 
+			Admin.logout = function(){
+				$sessionStorage.empty();
+			}
+
 			return Admin;
 		}
 })();

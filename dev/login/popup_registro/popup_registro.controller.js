@@ -9,16 +9,20 @@
 		
 		var helper = HelpersFactory;
 		$scope.cliente={};
-		//$scope.cliente.nombre = undefined;
-		//$scope.cliente.correo = undefined;
-		//$scope.cliente.usuario = undefined;
-		//$scope.cliente.password = undefined;
+		var body = angular.element(document).find('body');
+
 		
 
 		$scope.addCliente = function(){
-			LoginService.agregarClientes($scope.cliente).then(function(response){
-				//cerrar popup
-				helper.popupClose();
+			LoginService
+				.agregarClientes($scope.cliente)
+				.then(function(response){
+					if(response.estatus=="ok"){
+						helper.popupClose();
+						body.append($compile("<mensaje-okey correcto='"+ response.msj +"'></mensaje-okey>")($scope));
+					} else {
+					console.log(response.msj);
+				}
 			}).catch(function(err){
 				console.log(err)
 			});

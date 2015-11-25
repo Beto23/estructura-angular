@@ -44,11 +44,11 @@
 				})
 		}
 		$scope.imgs = [
+						['img/11924968_753512294771183_7096973777648509408_n.jpg', 'Las mejores instalaciones'],
+						['img/perfilmecanico.jpg','Contamos con los mejores mecanicos'],
+						['img/registrarCliente.jpg', 'El mejor trato a nuestros clientes'],
 						['img/perfiluser.jpg','Perfil Usuario'],
-						['img/perfilmecanico.jpg','Perfil Mecanico'],
-						['img/registrarCliente.jpg', 'Registra tus clientes'],
-						['img/registraMantt.jpg', 'Registra tus mantenimientos'],
-						['img/historialMant.jpg', 'Historial de mantenimiento']
+						['img/registraMantt.jpg', 'Verifica tus mantenimientos']
 					];
 		//console.log("Login controller");
 	}

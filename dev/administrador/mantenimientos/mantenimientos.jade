@@ -1,10 +1,10 @@
 section.Contenedor-Mantenimientos
 	h2 Mantenimientos
 	div.Iconos-Mantenimientos
-		form.Form-Mantenimientos
+		form(action="http://localhost/estructura-angular/backend/pdf/mantenimientos.php" method="POST").Form-Mantenimientos
 			i.icon-search
 			input(type="text" ng-model="search")
-			i.icon-printer
+			button(type="submit").icon-file-pdf
 			i(popup-add="<popup-agregar-mantenimiento/>").icon-plus
 	table(fixed-header).Tabla-Mantenimientos
 		thead
