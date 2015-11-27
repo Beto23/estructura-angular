@@ -8,13 +8,13 @@
 	function HistorialController($scope, $compile, ClienteService, $state,HelpersFactory, UsuarioFactory){
 		
 		var helper = HelpersFactory;
-		var usuario = UsuarioFactory.getInfo();
+		$scope.usuario = UsuarioFactory.getInfo();
 
 		$scope.costoTotal = 0;
 		//ver las historial
 		$scope.citas=[];
 		ClienteService
-			.getMisCitas(usuario.id_cliente)
+			.getMisCitas($scope.usuario.id_cliente)
 			.then(function(response){
 				//cerrar popup
 				$scope.citas=response

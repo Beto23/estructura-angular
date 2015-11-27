@@ -5,15 +5,15 @@ div.Popup2(popup-close)
 			h2 Agregar Administrador
 			div.Form-Add_Admin-Contenedor
 				label Nombre:
-				input(type="text" ng-model="administrador.nombre")
+				input(type="text" ng-model="administrador.nombre" required)
 			div.Form-Add_Admin-Contenedor
 				label Correo:
-				input(type="text" ng-model="administrador.correo")
+				input(title="mail@example.com" type="email" ng-model="administrador.correo" required)
 			div.Form-Add_Admin-Contenedor
 				label Usuario:
-				input(type="text" ng-model="administrador.usuario")
+				input(type="text" ng-model="administrador.usuario" required)
 			div.Form-Add_Admin-Contenedor
 				label Password:
-				input(type="password" ng-model="administrador.password")
+				input(type="password" ng-model="administrador.password" required)
 			div.Form-Add_Admin-Contenedor
 				button(ng-click="addAdminsitrador()") Agregar

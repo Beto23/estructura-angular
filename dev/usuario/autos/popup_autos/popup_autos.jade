@@ -5,16 +5,16 @@ div.Popup2(popup-close)
 			h2 Agregar Automovil
 			div
 				label Marca:
-				input(type="text" ng-model="auto.marca")
+				input(type="text" ng-model="auto.marca" required)
 			div
 				label Modelo:
-				input(type="text" ng-model="auto.modelo")
+				input(type="text" ng-model="auto.modelo" required)
 			div
 				label Año:
-				input(type="text" ng-model="auto.year")
+				input(type="text" ng-model="auto.year" required)
 			div
 				label Color:
-				input(type="text" ng-model="auto.color")
+				input(type="text" ng-model="auto.color" required)
 			div
 				button(ng-click="addAuto()")
 					p Agregar

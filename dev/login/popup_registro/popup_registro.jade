@@ -6,21 +6,21 @@ div.Popup(popup-close)
 				h2.firsth2 Registro<br> de Usuario
 				div
 					label Usuario
-					input(type="text" ng-model="cliente.usuario")
+					input(title="Ingresar un usuario" type="text" ng-model="cliente.usuario" maxLength="10" required)
 				div
 					label Nombre
-					input(type="text" ng-model="cliente.nombre")
+					input(title="Ingrese su nombre" type="text" ng-model="cliente.nombre" maxLength="25" required)
 				div
 					label Paterno
-					input(type="text" ng-model="cliente.nom_paterno")
+					input(title="Ingrese su apellido paterno" type="text" ng-model="cliente.nom_paterno" maxLength="25" required)
 				div
 					label Materno
-					input(type="text" ng-model="cliente.nom_materno")
+					input(title="Ingrese su apellido materno" type="text" ng-model="cliente.nom_materno" maxLength="25" required)
 				div
 					label Correo
-					input(type="text" ng-model="cliente.correo")
+					input(title="mail@example.com" type="email" ng-model="cliente.correo" required)
 				div
 					label Password
-					input(type="password" ng-model="cliente.password")
+					input(title="Ingrese una contraseña" type="password" ng-model="cliente.password" maxLength="25" required)
 				div
 					button(ng-click="addCliente()") Registrar

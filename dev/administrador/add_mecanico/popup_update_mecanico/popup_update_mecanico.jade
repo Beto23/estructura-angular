@@ -5,12 +5,12 @@ div.Popup2(popup-close)
 			h2 Actualizar Mecanico
 			div.Form-Mecanico-Contenedor
 				label Nombre:
-				input(type="text" ng-model="mecanicoUpdate.nombre")
+				input(type="text" ng-model="mecanicoUpdate.nombre" required title="Ingrese un nombre")
 			div.Form-Mecanico-Contenedor
 				label Paterno:
-				input(type="text" ng-model="mecanicoUpdate.nom_paterno")
+				input(type="text" ng-model="mecanicoUpdate.nom_paterno" required title="Ingrese apellido paterno")
 			div.Form-Mecanico-Contenedor
 				label Materno:
-				input(type="text" ng-model="mecanicoUpdate.nom_materno")
+				input(type="text" ng-model="mecanicoUpdate.nom_materno" required title="Ingrese apellido materno")
 			div.Form-Mecanico-Contenedor
 				button(ng-click="updateMecanico()") Actualizar

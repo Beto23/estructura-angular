@@ -6,29 +6,29 @@ div.Popup2(popup-close)
 			div
 				label Cliente:
 				select(ng-model="cita.id_cliente")
-					option(value="{{cts.id_cliente}}" ng-repeat="cts in clientes") {{cts.nombre}} {{cts.nom_paterno}} {{cts.nom_materno}}
+					option(value="{{cts.id_cliente}}" ng-repeat="cts in clientes" required) {{cts.nombre}} {{cts.nom_paterno}} {{cts.nom_materno}}
 
 			div
 				label Auto:
 				select(ng-model="cita.id_auto")
-					option(value="{{car.id_auto}}" ng-repeat="car in autos") {{car.modelo}}
+					option(value="{{car.id_auto}}" ng-repeat="car in autos" required) {{car.modelo}}
 			div
 				label Descripción:
 				select(ng-model="cita.id_mantenimiento")
-					option(value="{{mante.id_mantenimiento}}" ng-repeat="mante in mantenimientos") {{mante.descripcion}} ${{mante.costo}}
+					option(value="{{mante.id_mantenimiento}}" ng-repeat="mante in mantenimientos" required) {{mante.descripcion}} ${{mante.costo}}
 			div
 				label Mecanico:
 				select(ng-model="cita.id_mecanico")
-					option(value="{{meca.id_mecanico}}" ng-repeat="meca in mecanicos") {{meca.nombre}}
+					option(value="{{meca.id_mecanico}}" ng-repeat="meca in mecanicos" required) {{meca.nombre}}
 			div
 				label Fecha inicio:
-				input(type="date" ng-model="cita.fecha_inicio")
+				input(type="date" ng-model="cita.fecha_inicio" required)
 			div
 				label Fecha salida:
-				input(type="date" ng-model="cita.fecha_fin")
+				input(type="date" ng-model="cita.fecha_fin" required)
 			div
 				label Hora:
-				select(ng-model="cita.hora")
+				select(ng-model="cita.hora" required)
 					option 8:00
 					option 9:00
 					option 10:00

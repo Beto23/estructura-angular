@@ -1,10 +1,12 @@
 section.Contenedor-Historial
 	h2 Historial De Mantenimientos
 	div.Iconos-Historial-Cliente
-		form.Form-busqueda
+		div.Form-busqueda
 			i.icon-search
 			input(type="text" ng-model="search")
-			//button(type="submit").icon-file-pdf
+			form(action="http://localhost/estructura-angular/backend/pdf/historialCliente.php" method="POST")
+				input(type="hidden" name="id_cliente" value="{{usuario.id_cliente}}")
+				button(type="submit").icon-file-pdf
 	table.Tabla-Historial
 		tr
 			th
